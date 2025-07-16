@@ -134,7 +134,7 @@ const About = () => {
       </section>*/}
 
       {/* Timeline Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -151,9 +151,9 @@ const About = () => {
             </h2>
           </motion.div>
 
-          <div className="relative">
+          <div className="relative"> */}
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-[#60A5FA] to-[#3B82F6]" />
+            {/* <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-[#60A5FA] to-[#3B82F6]" />
 
             <div className="space-y-12">
               {timeline.map((item, index) => (
@@ -171,10 +171,10 @@ const About = () => {
                       <h3 className="text-xl font-light text-white mb-3">{item.title}</h3>
                       <p className="text-gray-400">{item.description}</p>
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Timeline Dot */}
-                  <div className="relative z-10 w-4 h-4 bg-[#60A5FA] rounded-full border-4 border-[#0D0D0D]" />
+                  {/* <div className="relative z-10 w-4 h-4 bg-[#60A5FA] rounded-full border-4 border-[#0D0D0D]" />
 
                   <div className="w-1/2" />
                 </motion.div>
@@ -182,7 +182,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Initiative Section */}
       <section className="relative py-20 bg-gradient-to-b from-[#0D0D0D] to-[#1A1A1A] overflow-hidden">

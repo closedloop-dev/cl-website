@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageSquare, Users, Globe } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Badge } from '@/components/ui/badge';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { Textarea } from '@/components/ui/textarea';
+import { motion } from 'framer-motion';
+import { CheckCircle, Clock, Mail, MapPin, MessageSquare, Phone, Send } from 'lucide-react';
+import React, { useState } from 'react';
 import FloatingElements from '../components/FloatingElements';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,17 +36,17 @@ const Contact = () => {
     {
       city: "Bangalore",
       country: "India",
-      address: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      phone: "+91 1234567890",
-      email: "hello@closedloop.com",
+      address: "Race Course Road Bengaluru, Karnataka 560001",
+      phone: "+919663558202",
+      email: "Media@closedloop.in",
       hours: "Mon-Fri: 9AM-6PM IST"
     },
     {
       city: "Mumbai",
       country: "India",
-      address: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      phone: "+91 1234567890",
-      email: "hello@closedloop.com",
+      address: "Bandra Kurla Complex, Mumbai, Maharashtra , 400051",
+      phone: "+919663558202",
+      email: "Media@closedloop.in",
       hours: "Mon-Fri: 9AM-6PM IST"
     },
   ];
@@ -56,14 +56,14 @@ const Contact = () => {
       icon: Mail,
       title: "Email Us",
       description: "Get in touch via email for general inquiries",
-      contact: "hello@closedloop.com",
+      contact: "Media@closedloop.in",
       response: "We'll respond within 24 hours"
     },
     {
       icon: Phone,
       title: "Call Us",
       description: "Speak directly with our team",
-      contact: "+91 1234567890",
+      contact: "+919663558202",
       response: "Available Mon-Fri, 9AM-6PM EST"
     },
     {
@@ -98,7 +98,7 @@ const Contact = () => {
     <div className="min-h-screen bg-[#0D0D0D]">
       <FloatingElements />
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -294,7 +294,7 @@ const Contact = () => {
                         Office
                       </Badge>
                     </div>
-                    
+
                     <div className="space-y-3">
                       <div className="flex items-start space-x-3">
                         <MapPin className="h-5 w-5 text-[#60A5FA] flex-shrink-0 mt-0.5" />

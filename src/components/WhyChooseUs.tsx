@@ -143,7 +143,7 @@ const WhyChooseUs = () => {
       </div>
 
       {/* Coin Flip CSS */}
-      <style jsx>{`
+      <style>{`
         .perspective {
           perspective: 1000px;
         }

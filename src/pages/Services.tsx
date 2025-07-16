@@ -291,10 +291,10 @@ const Services = () => {
                         </ul>
                       </div>
 
-                      <Button className="w-full bg-gradient-to-r from-[#60A5FA] to-[#3B82F6] hover:shadow-xl hover:shadow-[#60A5FA]/25 transition-all duration-300 py-6 text-lg font-medium">
+                      {/* <Button className="w-full bg-gradient-to-r from-[#60A5FA] to-[#3B82F6] hover:shadow-xl hover:shadow-[#60A5FA]/25 transition-all duration-300 py-6 text-lg font-medium">
                         Get Started
                         <ArrowRight className="w-5 h-5 ml-3" />
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                 </motion.div>
@@ -305,7 +305,7 @@ const Services = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -346,7 +346,7 @@ const Services = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Users, Star, Check, ShoppingCart, CreditCard, Ticket, Phone, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { motion } from 'framer-motion';
+import { Calendar, Check, Clock, CreditCard, Mail, MapPin, Phone, Ticket } from 'lucide-react';
+import { useState } from 'react';
 import FloatingElements from '../components/FloatingElements';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 const TicketPage = () => {
   const [selectedTicket, setSelectedTicket] = useState<string>('');
@@ -427,7 +426,7 @@ const TicketPage = () => {
                 Call Us Now
               </a>
               <a
-                href="mailto:hello@closedloop.com"
+                href="mailto:Media@closedloop.in"
                 className="inline-flex items-center justify-center px-8 py-3 border border-[#60A5FA] text-[#60A5FA] hover:bg-[#60A5FA] hover:text-white rounded-lg transition-all duration-300 hover:scale-105"
               >
                 <Mail className="h-5 w-5 mr-2" />

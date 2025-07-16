@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Mail, Menu, Phone, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,8 +37,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-black/90 backdrop-blur-xl border-b border-white/20 shadow-2xl'
-          : 'bg-black/80 backdrop-blur-lg border-b border-white/10'
+        ? 'bg-black/90 backdrop-blur-xl border-b border-white/20 shadow-2xl'
+        : 'bg-black/80 backdrop-blur-lg border-b border-white/10'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,8 +69,8 @@ const Navbar = () => {
                 <Link
                   to={item.path}
                   className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${isActive(item.path)
-                      ? 'text-[#60A5FA]'
-                      : 'text-gray-300 hover:text-white'
+                    ? 'text-[#60A5FA]'
+                    : 'text-gray-300 hover:text-white'
                     }`}
                 >
                   {item.name}
@@ -104,11 +103,11 @@ const Navbar = () => {
               </a>
               <span className="text-gray-500">|</span>
               <a 
-                href="mailto:hello@closedloop.com"
+                href="mailto:Media@closedloop.in"
                 className="flex items-center space-x-2 text-gray-300 hover:text-[#60A5FA] transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                <span className="text-sm font-medium">hello@closedloop.com</span>
+                <span className="text-sm font-medium">Media@closedloop.in</span>
               </a>
             </motion.div>
           </div> */}
@@ -151,8 +150,8 @@ const Navbar = () => {
                     to={item.path}
                     onClick={() => setIsOpen(false)}
                     className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${isActive(item.path)
-                        ? 'text-[#60A5FA]'
-                        : 'text-gray-300 hover:text-white'
+                      ? 'text-[#60A5FA]'
+                      : 'text-gray-300 hover:text-white'
                       }`}
                   >
                     {item.name}
@@ -175,11 +174,11 @@ const Navbar = () => {
                   <span className="text-sm">+1 (555) 123-4567</span>
                 </a>
                 <a
-                  href="mailto:hello@closedloop.com"
+                  href="mailto:Media@closedloop.in"
                   className="flex items-center space-x-3 text-gray-300 hover:text-[#60A5FA] transition-colors"
                 >
                   <Mail className="h-4 w-4" />
-                  <span className="text-sm">hello@closedloop.com</span>
+                  <span className="text-sm">Media@closedloop.in</span>
                 </a>
               </motion.div>
             </div>

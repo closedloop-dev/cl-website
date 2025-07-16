@@ -1,8 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import XIcon from '@/components/XIcon';
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -68,10 +67,10 @@ const Footer = () => {
               >
                 <Mail className="h-4 w-4" />
                 <a
-                  href="mailto:hello@closedloop.com"
+                  href="mailto:Media@closedloop.in"
                   className="text-sm underline-offset-2 hover:underline"
                 >
-                  hello@closedloop.com
+                  Media@closedloop.in
                 </a>
               </motion.div>
 
@@ -86,7 +85,7 @@ const Footer = () => {
                   href="tel:+11231234567"
                   className="text-sm underline-offset-2 hover:underline"
                 >
-                  +1 (123) 123-4567
+                  +919663558202
                 </a>
               </motion.div>
 
