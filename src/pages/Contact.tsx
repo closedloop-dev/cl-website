@@ -1,10 +1,23 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { motion } from 'framer-motion';
-import { CheckCircle, Clock, Mail, MapPin, MessageSquare, Phone, Send } from 'lucide-react';
+import {
+  CheckCircle,
+  Mail,
+  MapPin,
+  MessageSquare,
+  Phone,
+  Send
+} from 'lucide-react';
 import React, { useState } from 'react';
 import FloatingElements from '../components/FloatingElements';
 import Footer from '../components/Footer';
@@ -22,8 +35,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
   };
@@ -32,65 +43,77 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const offices = [
-    {
-      city: "Bangalore",
-      country: "India",
-      address: "Race Course Road Bengaluru, Karnataka 560001",
-      phone: "+919663558202",
-      email: "Media@closedloop.in",
-      hours: "Mon-Fri: 9AM-6PM IST"
-    },
-    {
-      city: "Mumbai",
-      country: "India",
-      address: "Bandra Kurla Complex, Mumbai, Maharashtra , 400051",
-      phone: "+919663558202",
-      email: "Media@closedloop.in",
-      hours: "Mon-Fri: 9AM-6PM IST"
-    },
-  ];
+  const isFormComplete =
+    formData.name.trim() &&
+    formData.email.trim() &&
+    formData.service.trim() &&
+    formData.message.trim();
 
   const contactMethods = [
     {
       icon: Mail,
       title: "Email Us",
       description: "Get in touch via email for general inquiries",
-      contact: "Media@closedloop.in",
+      contact: (
+        <a
+          href="mailto:Media@closedloop.in"
+          className="text-[#60A5FA] hover:underline"
+        >
+          Media@closedloop.in
+        </a>
+      ),
       response: "We'll respond within 24 hours"
     },
     {
       icon: Phone,
       title: "Call Us",
       description: "Speak directly with our team",
-      contact: "+919663558202",
-      response: "Available Mon-Fri, 9AM-6PM EST"
+      contact: (
+        <a
+          href="tel:+919663558202"
+          className="text-[#60A5FA] hover:underline"
+        >
+          +91 96635 58202
+        </a>
+      ),
+      response: "Available Mon-Fri, 9AM-6PM IST"
     },
     {
       icon: MessageSquare,
       title: "WhatsApp",
       description: "Chat with our support team in real-time",
-      contact: "Start Chat",
+      contact: (
+        <a
+          href="https://wa.me/917760090695"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#60A5FA] hover:underline"
+        >
+          Start Chat on WhatsApp
+        </a>
+      ),
       response: "Average response time: 2 minutes"
     }
   ];
 
-  const faqs = [
+  const offices = [
     {
-      question: "What services do you offer?",
-      answer: "We offer comprehensive artist management, event production, talent booking, brand partnerships, media & PR, and production setup services."
+      city: 'Bangalore',
+      country: 'India',
+      address: 'Race Course Road Bengaluru, Karnataka 560001',
+      phone: '+91 96635 58202',
+      email: 'Media@closedloop.in',
+      hours: 'Mon-Fri: 9AM-6PM IST',
+      badgeColor: 'bg-blue-500'
     },
     {
-      question: "How quickly can you start working on a project?",
-      answer: "We can typically begin work within 1-2 weeks of contract signing, depending on project scope and current capacity."
-    },
-    {
-      question: "Do you work with international clients?",
-      answer: "Yes! We have offices in New York, London, and Tokyo, and work with clients worldwide."
-    },
-    {
-      question: "What is your typical project timeline?",
-      answer: "Project timelines vary based on scope and complexity. Small events can be completed in 2-4 weeks, while large productions may take 3-6 months."
+      city: 'Mumbai',
+      country: 'India',
+      address: 'Bandra Kurla Complex, Mumbai, Maharashtra 400051',
+      phone: '+91 96635 58202',
+      email: 'Media@closedloop.in',
+      hours: 'Mon-Fri: 9AM-6PM IST',
+      badgeColor: 'bg-green-500'
     }
   ];
 
@@ -98,33 +121,6 @@ const Contact = () => {
     <div className="min-h-screen bg-[#0D0D0D]">
       <FloatingElements />
       <Navbar />
-
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute w-[400px] h-[400px] bg-[#60A5FA]/20 rounded-full blur-3xl top-[20%] left-[10%] z-[-1] animate-pulse" />
-          <div className="absolute w-[300px] h-[300px] bg-[#3B82F6]/15 rounded-full blur-3xl bottom-[15%] right-[15%] z-[-1] animate-pulse" style={{ animationDelay: '2s' }} />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-7xl font-light mb-6 tracking-tight">
-              <span className="text-gray-300">Get in</span>
-              <span className="block text-transparent bg-gradient-to-r from-[#60A5FA] to-[#3B82F6] bg-clip-text animate-shimmer bg-[length:400%_100%]">
-                Touch
-              </span>
-            </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">
-              Ready to start your next project? We'd love to hear from you. Let's create something amazing together.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Contact Methods */}
       <section className="py-20">
@@ -153,11 +149,10 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form & Offices */}
+      {/* Contact Form */}
       <section className="py-20 bg-white/5 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -179,7 +174,9 @@ const Contact = () => {
                 >
                   <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-4" />
                   <h3 className="text-2xl font-light text-white mb-2">Message Sent!</h3>
-                  <p className="text-gray-400">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                  <p className="text-gray-400">
+                    Thank you for reaching out. We'll get back to you within 24 hours.
+                  </p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -257,6 +254,25 @@ const Contact = () => {
                     <Send className="h-5 w-5 mr-2" />
                     Send Message
                   </Button>
+
+                  {isFormComplete && (
+                    <a
+                      href={`https://wa.me/917760090695?text=${encodeURIComponent(
+                        `Hello, I'm ${formData.name}. I’m interested in ${formData.service}. My company: ${formData.company || "N/A"}. Here's my message:\n${formData.message}\nYou can reach me at ${formData.email}.`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="w-full border-[#25D366] text-[#25D366] hover:bg-[#25D366]/10 mt-4"
+                      >
+                        <MessageSquare className="h-5 w-5 mr-2" />
+                        Send via WhatsApp
+                      </Button>
+                    </a>
+                  )}
                 </form>
               )}
             </motion.div>
@@ -267,55 +283,26 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="space-y-6"
             >
-              <h2 className="text-4xl font-light mb-8">
-                <span className="text-gray-300">Our</span>
-                <span className="block text-transparent bg-gradient-to-r from-[#60A5FA] to-[#3B82F6] bg-clip-text">
-                  Offices
-                </span>
-              </h2>
-
-              <div className="space-y-6">
-                {offices.map((office, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 glass-card"
-                  >
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h3 className="text-xl font-light text-white">{office.city}</h3>
-                        <p className="text-gray-400">{office.country}</p>
-                      </div>
-                      <Badge variant="secondary" className="bg-[#60A5FA]/20 text-[#60A5FA] border-[#60A5FA]/30">
-                        Office
-                      </Badge>
-                    </div>
-
-                    <div className="space-y-3">
-                      <div className="flex items-start space-x-3">
-                        <MapPin className="h-5 w-5 text-[#60A5FA] flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-300">{office.address}</span>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <Phone className="h-5 w-5 text-[#60A5FA] flex-shrink-0" />
-                        <span className="text-gray-300">{office.phone}</span>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <Mail className="h-5 w-5 text-[#60A5FA] flex-shrink-0" />
-                        <span className="text-gray-300">{office.email}</span>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <Clock className="h-5 w-5 text-[#60A5FA] flex-shrink-0" />
-                        <span className="text-gray-300">{office.hours}</span>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+              <h2 className="text-3xl font-light text-white mb-4">Our Offices</h2>
+              {offices.map((office, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white/5 p-6 rounded-2xl border border-white/10"
+                >
+                  <Badge className={`${office.badgeColor} text-white mb-4`}>{office.country}</Badge>
+                  <h4 className="text-xl font-light text-white mb-2">{office.city}</h4>
+                  <p className="text-gray-400 mb-1">{office.address}</p>
+                  <p className="text-gray-400 mb-1"> {office.phone}</p>
+                  <p className="text-gray-400 mb-1"> {office.email}</p>
+                  <p className="text-gray-400"> {office.hours}</p>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </div>
@@ -326,4 +313,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

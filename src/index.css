@@ -115,7 +115,7 @@
 
   body {
     @apply bg-background text-foreground;
-    cursor: none; /* Hide default cursor */
+    cursor: default !important; /* Set default cursor globally */
     overflow-x: hidden;
   }
 
@@ -235,14 +235,14 @@
   }
 
   /* Custom cursor styles */
-  .custom-cursor {
+  /* .custom-cursor {
     cursor: none;
-  }
+  } */
   
   /* Ensure interactive elements work with custom cursor */
-  button, a, input, textarea, select {
+  /* button, a, input, textarea, select {
     cursor: none;
-  }
+  } */
 
   /* Line clamp utility */
   .line-clamp-2 {
