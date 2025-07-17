@@ -38,7 +38,8 @@ const Footer = () => {
   return (
     <footer className="bg-[#0D0D0D] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-8 text-center md:text-left items-center md:items-start md:grid-cols-2 lg:grid-cols-4">
+
           {/* Company Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -82,7 +83,7 @@ const Footer = () => {
               >
                 <Phone className="h-4 w-4" />
                 <a
-                  href="tel:+11231234567"
+                  href="tel:+919663558202"
                   className="text-sm underline-offset-2 hover:underline"
                 >
                   +919663558202

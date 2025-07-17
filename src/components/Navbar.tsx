@@ -167,11 +167,11 @@ const Navbar = () => {
                 className="pt-4 border-t border-white/20 space-y-3"
               >
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+91 9663558202"
                   className="flex items-center space-x-3 text-gray-300 hover:text-[#60A5FA] transition-colors"
                 >
                   <Phone className="h-4 w-4" />
-                  <span className="text-sm">+1 (555) 123-4567</span>
+                  <span className="text-sm">+91 9663558202</span>
                 </a>
                 <a
                   href="mailto:Media@closedloop.in"

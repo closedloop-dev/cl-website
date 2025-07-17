@@ -33,12 +33,6 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-  };
-
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
@@ -48,6 +42,10 @@ const Contact = () => {
     formData.email.trim() &&
     formData.service.trim() &&
     formData.message.trim();
+
+  const whatsappUrl = `https://wa.me/917760090695?text=${encodeURIComponent(
+    `Hello, I'm ${formData.name}. I’m interested in ${formData.service}. My company: ${formData.company || "N/A"}. Here's my message:\n${formData.message}\nYou can reach me at ${formData.email}.`
+  )}`;
 
   const contactMethods = [
     {
@@ -166,115 +164,90 @@ const Contact = () => {
                 </span>
               </h2>
 
-              {isSubmitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="bg-green-500/10 border border-green-500/30 rounded-2xl p-8 text-center"
-                >
-                  <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-4" />
-                  <h3 className="text-2xl font-light text-white mb-2">Message Sent!</h3>
-                  <p className="text-gray-400">
-                    Thank you for reaching out. We'll get back to you within 24 hours.
-                  </p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">Name *</label>
-                      <Input
-                        type="text"
-                        value={formData.name}
-                        onChange={(e) => handleChange('name', e.target.value)}
-                        className="bg-white/5 border-white/10 text-white placeholder-gray-500 focus:border-[#60A5FA]"
-                        placeholder="Your full name"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">Email *</label>
-                      <Input
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => handleChange('email', e.target.value)}
-                        className="bg-white/5 border-white/10 text-white placeholder-gray-500 focus:border-[#60A5FA]"
-                        placeholder="your@email.com"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">Company (Optional)</label>
-                      <Input
-                        type="text"
-                        value={formData.company}
-                        onChange={(e) => handleChange('company', e.target.value)}
-                        className="bg-white/5 border-white/10 text-white placeholder-gray-500 focus:border-[#60A5FA]"
-                        placeholder="Your company name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">Service Interest *</label>
-                      <Select value={formData.service} onValueChange={(value) => handleChange('service', value)}>
-                        <SelectTrigger className="bg-white/5 border-white/10 text-white focus:border-[#60A5FA]">
-                          <SelectValue placeholder="Select a service" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-[#1a1a1a] border-white/10">
-                          <SelectItem value="artist-management">Artist Management</SelectItem>
-                          <SelectItem value="talent-booking">Talent Booking</SelectItem>
-                          <SelectItem value="event-production">Event Production</SelectItem>
-                          <SelectItem value="brand-partnerships">Brand Partnerships</SelectItem>
-                          <SelectItem value="media-pr">Media & PR</SelectItem>
-                          <SelectItem value="production-setup">Production Setup</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Message *</label>
-                    <Textarea
-                      value={formData.message}
-                      onChange={(e) => handleChange('message', e.target.value)}
-                      className="bg-white/5 border-white/10 text-white placeholder-gray-500 focus:border-[#60A5FA] min-h-[120px]"
-                      placeholder="Tell us about your project..."
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Name *</label>
+                    <Input
+                      type="text"
+                      value={formData.name}
+                      onChange={(e) => handleChange('name', e.target.value)}
+                      className="bg-white/5 border-white/10 text-white placeholder-gray-500 focus:border-[#60A5FA]"
+                      placeholder="Your full name"
                       required
                     />
                   </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+                    <Input
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => handleChange('email', e.target.value)}
+                      className="bg-white/5 border-white/10 text-white placeholder-gray-500 focus:border-[#60A5FA]"
+                      placeholder="your@email.com"
+                      required
+                    />
+                  </div>
+                </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Company (Optional)</label>
+                    <Input
+                      type="text"
+                      value={formData.company}
+                      onChange={(e) => handleChange('company', e.target.value)}
+                      className="bg-white/5 border-white/10 text-white placeholder-gray-500 focus:border-[#60A5FA]"
+                      placeholder="Your company name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Service Interest *</label>
+                    <Select value={formData.service} onValueChange={(value) => handleChange('service', value)}>
+                      <SelectTrigger className="bg-white/5 border-white/10 text-white focus:border-[#60A5FA]">
+                        <SelectValue placeholder="Select a service" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-[#ffffff] border-white/10">
+                        <SelectItem value="artist-management">Artist Management</SelectItem>
+                        <SelectItem value="talent-booking">Talent Booking</SelectItem>
+                        <SelectItem value="event-production">Event Production</SelectItem>
+                        <SelectItem value="brand-partnerships">Brand Partnerships</SelectItem>
+                        <SelectItem value="media-pr">Media & PR</SelectItem>
+                        <SelectItem value="production-setup">Production Setup</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">Message *</label>
+                  <Textarea
+                    value={formData.message}
+                    onChange={(e) => handleChange('message', e.target.value)}
+                    className="bg-white/5 border-white/10 text-white placeholder-gray-500 focus:border-[#60A5FA] min-h-[120px]"
+                    placeholder="Tell us about your project..."
+                    required
+                  />
+                </div>
+
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${isFormComplete ? '' : 'pointer-events-none opacity-50'}`}
+                >
                   <Button
-                    type="submit"
+                    type="button"
                     size="lg"
                     className="w-full bg-gradient-to-r from-[#60A5FA] to-[#3B82F6] hover:from-[#3B82F6] hover:to-[#60A5FA] text-white"
+                    disabled={!isFormComplete}
                   >
                     <Send className="h-5 w-5 mr-2" />
                     Send Message
                   </Button>
-
-                  {isFormComplete && (
-                    <a
-                      href={`https://wa.me/917760090695?text=${encodeURIComponent(
-                        `Hello, I'm ${formData.name}. I’m interested in ${formData.service}. My company: ${formData.company || "N/A"}. Here's my message:\n${formData.message}\nYou can reach me at ${formData.email}.`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button
-                        type="button"
-                        variant="outline"
-                        className="w-full border-[#25D366] text-[#25D366] hover:bg-[#25D366]/10 mt-4"
-                      >
-                        <MessageSquare className="h-5 w-5 mr-2" />
-                        Send via WhatsApp
-                      </Button>
-                    </a>
-                  )}
-                </form>
-              )}
+                </a>
+              </form>
             </motion.div>
 
             {/* Office Locations */}

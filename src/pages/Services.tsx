@@ -219,11 +219,11 @@ const Services = () => {
                         className="relative overflow-hidden rounded-3xl"
                       >
                         <div className="absolute inset-0 bg-gradient-to-br from-[#60A5FA]/20 to-[#3B82F6]/20 z-10" />
-                        <img 
-                          src={service.image} 
-                          alt={service.title}
-                          className="w-full h-80 object-cover rounded-3xl shadow-2xl"
-                        />
+                          <img 
+                            src={service.image} 
+                            alt={service.title}
+                            className="w-full h-80 object-contain rounded-3xl shadow-2xl"
+                          />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-20" />
                       </motion.div>
                     </div>
