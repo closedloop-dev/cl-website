@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Music, 
-  Users, 
-  Calendar, 
-  Megaphone, 
-  Camera, 
-  Settings, 
-  Star, 
-  Check, 
-  ArrowRight, 
-  Play, 
-  Phone, 
-  Mail, 
-  MessageCircle, 
-  Sparkles, 
+import {
+  Music,
+  Users,
+  Calendar,
+  Megaphone,
+  Camera,
+  Settings,
+  Star,
+  Check,
+  ArrowRight,
+  Play,
+  Phone,
+  Mail,
+  MessageCircle,
+  Sparkles,
   Heart,
   Clock,
   Target,
@@ -39,81 +39,66 @@ const Services = () => {
       icon: Users,
       title: "Artist Management",
       subtitle: "Careers don't just happen — they're built. And we build them right.",
-      description: "We offer end-to-end artist management services tailored to each individual's unique vision, goals, and artistic identity. Our team works closely with creatives to shape career trajectories through strategic planning, talent development, branding, and personal guidance.",
+      description: "As an expert artist management agency, we represent and manage a curated selection of exceptional talent across",
       tagline: "We don't just manage careers - we cultivate artistry, impact, and legacy.",
       features: [
-        "Strategic career planning & long-term development",
-        "Booking & contract negotiations",
-        "Tour management & logistics",
-        "Personal branding & image consulting",
-        "Rights management & financial advisory",
-        "Mental wellness and career sustainability support"
+        "Singers (playback, live, independent)",
+        "DJs & Music Producers",
+        "Emcees & Hosts",
+        "Dancers & Choreographers",
+        "Influencers & Creators",
       ],
+      desc: "From contract negotiations to scheduling, promotions, and performance coordination, we ensure that both our clients and artists receive unmatched professionalism and attention.",
+
       image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       icon: Music,
-      title: "Talent Booking",
+      title: "Event Management",
       subtitle: "The right talent. The right crowd. Every time.",
-      description: "Closed Loop connects event organisers, brands, and venues with a diverse roster of high-calibre performers and influencers. Whether it's a high-energy festival, an exclusive corporate event, or a curated showcase, we ensure that talent and audience align seamlessly.",
+      description: "Every event tells a story. We help you tell yours with flair, structure, and soul. Our event planning services include:",
       tagline: "We bring talent to stages, screens, and spaces where their impact resonates.",
       features: [
-        "Customised artist curation for events and campaigns",
-        "Domestic and international talent sourcing",
-        "Corporate, festival, nightlife, and private event bookings",
-        "Technical and hospitality rider coordination",
-        "Real-time artist availability and response management"
+        "Corporate Events",
+        "Public Concerts & Festivals",
+        "Promotional & Themed Events",
       ],
+      desc: "We take care of concept design, logistics, vendor coordination, budgeting, and on-the-ground execution.",
       image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       icon: Calendar,
-      title: "Event Production",
+      title: "Brand Collaborations & Promotions",
       subtitle: "From concept to curtain call - we create unforgettable moments.",
-      description: "Our production team handles events with precision, flair, and creative direction that leaves a lasting impression. We specialize in immersive, culturally-relevant experiences that blend entertainment, storytelling, and seamless execution.",
-      tagline: "From intimate showcases to large-scale productions, we turn events into experiences.",
+      description: "We connect artists and influencers with brands to amplify campaigns through",
       features: [
-        "Full-service event conceptualisation and planning",
-        "Stage and lighting design, AV, and technical coordination",
-        "Artist and guest logistics",
-        "Creative direction and programming",
-        "Staffing, vendor management, and onsite execution",
-        "Post-event analytics and impact reporting"
+        "Branded content and influencer partnerships",
+        "Product launches and showcase events",
+        "Experiential marketing setups",
+        "Emcee-driven interactions & stage presence",
       ],
+      desc: "Whether you're a startup or an established brand, we help elevate your identity with impactful experiences.",
+
       image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       icon: Megaphone,
-      title: "Brand Partnerships",
+      title: "Production Setup",
       subtitle: "Authentic collaborations that amplify both artist and brand.",
-      description: "We pair artists with bold, forward-thinking brands to create campaigns, experiences, and content that resonate deeply with audiences. Every partnership is built on creative alignment and mutual value, with storytelling at the core.",
+      description: "As a trusted event production company, we manage the entire technical and production setup, including:",
       tagline: "We build partnerships that last - because they're real.",
       features: [
-        "Brand-artist matchmaking and creative integration",
-        "Endorsements, campaigns, and experiential marketing",
-        "Social media and digital activations",
-        "Collaborative content production",
-        "Long-term brand ambassadorship development",
-        "Negotiations, contracts, and brand protection"
+        "Stage design and fabrication",
+        "Professional sound and lighting systems",
+        "LED screens, visual backdrops",
+        "Crew and technical staff coordination",
+        "Rehearsal and event-day stage management",
       ],
+      desc: "We work with the best vendors to deliver production that’s as polished as the performance.",
+
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
-    {
-      icon: Camera,
-      title: "Media & PR",
-      subtitle: "Visibility is power. We craft narratives that break through the noise.",
-      description: "In a fast-moving digital world, strategic publicity and media presence are vital. Our team elevates your voice through targeted media campaigns, press coverage, and reputation management that amplifies your personal brand and artistic identity.",
-      tagline: "We don't just get you seen — we get you remembered.",
-      features: [
-        "Media relations and press outreach",
-        "Social media strategy and growth campaigns",
-        "Content creation, storytelling, and branding",
-        "Influencer collaborations",
-        "Crisis communication & reputation management",
-        "Interview coaching and media training"
-      ],
-      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-    }
+
   ];
 
   const testimonials = [
@@ -164,11 +149,12 @@ const Services = () => {
             </h1>
             <div className="max-w-4xl mx-auto">
               <p className="text-xl text-gray-300 leading-relaxed mb-8">
-                At <strong className="text-[#60A5FA]">Closed Loop</strong>, we provide a fully integrated suite of services designed to support artists, brands, and event organisers at every stage of their journey.
+                <em>Crafted with Creativity. Delivered with Precision.</em>
               </p>
+              <p className="text-xl text-gray-300 leading-relaxed mb-8">
+                At <strong className="text-[#60A5FA]">Closed Loop</strong>, we offer end-to-end services that bridge the gap between <strong>talent</strong>, <strong>audience</strong> and <strong>brands</strong>. </p>
               <p className="text-lg text-gray-400 leading-relaxed">
-                Whether you're a rising talent or an established name, we create a continuous loop of creative growth, visibility, and opportunity.
-              </p>
+                Whether you're planning an intimate evening or a high-profile corporate affair, our team is equipped to turn ideas into experiences.</p>
             </div>
           </motion.div>
         </div>
@@ -209,7 +195,7 @@ const Services = () => {
                         {service.description}
                       </p>
                     </div>
-                    
+
                     <div className="relative">
                       <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -219,8 +205,8 @@ const Services = () => {
                         className="relative overflow-hidden rounded-3xl"
                       >
                         <div className="absolute inset-0 bg-gradient-to-br from-[#60A5FA]/20 to-[#3B82F6]/20 z-10" />
-                        <img 
-                          src={service.image} 
+                        <img
+                          src={service.image}
                           alt={service.title}
                           className="w-full h-80 object-cover rounded-3xl shadow-2xl"
                         />
@@ -237,7 +223,7 @@ const Services = () => {
                         <Target className="w-6 h-6 text-[#60A5FA]" />
                         What's Included
                       </h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                         {service.features.map((feature, featureIndex) => (
                           <motion.div
                             key={featureIndex}
@@ -252,6 +238,9 @@ const Services = () => {
                           </motion.div>
                         ))}
                       </div>
+                      <p className="text-gray-300 text-lg leading-relaxed">
+                        {service.desc}
+                      </p>
                     </div>
 
                     {/* Service Highlights */}
